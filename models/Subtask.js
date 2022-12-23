@@ -37,7 +37,7 @@ Subtask.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'task',
+    modelName: 'subtask',
   }
 );
 

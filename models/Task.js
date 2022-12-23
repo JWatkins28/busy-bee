@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const helpers = require('../utils/helpers');
 
 class Task extends Model {}
 
@@ -27,8 +28,7 @@ Task.init(
     date_due: {
       type: DataTypes.DATE,
       allowNull: false,
-       //   add time 24 hours to NOW value
-      defaultValue: DataTypes.NOW,
+      defaultValue: helpers.get_date,
     },
     user_id: {
       type: DataTypes.INTEGER,

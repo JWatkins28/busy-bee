@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
 
         // WHAT DO WE WANT HERE? 
 
-        res.render('homepage', {})
+        res.render('homepage')
 
     } catch (err) { res.status(500).json(err) }
 });

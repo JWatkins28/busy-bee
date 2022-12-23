@@ -19,8 +19,6 @@ const seedDatabase = async () => {
     });
   }
 
-  const tasks = await Task.findAll();
-
   process.exit(0);
 };
 
