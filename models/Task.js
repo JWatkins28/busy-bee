@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Task extends Model {}
 
-Project.init(
+Task.init(
   {
     id: {
       type: DataTypes.INTEGER,
