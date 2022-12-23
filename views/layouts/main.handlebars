@@ -14,8 +14,12 @@
         <nav>
             {{!-- other links --}}
             {{#if loggedIn}}
+            <a href="/">Home</a>
+            {{!-- <a href="/profile">Me</href> --}}
+            <a href="/mytasks">My Tasks</a>
             <a href="/" class="logout">Logout</a>
             {{else}}
+            <a href="/signup">Signup</a>
             <a href="/login">Login</a>
             {{/if}}
         </nav>
