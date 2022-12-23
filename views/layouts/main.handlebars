@@ -6,7 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busy Bee</title>
 </head>
+
 <body>
-    
+    <header>
+        {{!-- placeholder for logo/title img --}}
+        <h1>Busy Bee</h1>
+        <nav>
+            {{!-- other links --}}
+            {{#if loggedIn}}
+            <a href="/" class="logout">Logout</a>
+            {{else}}
+            <a href="/login">Login</a>
+            {{/if}}
+        </nav>
+    </header>
+
+    <main>
+        {{!-- other handlebars --}}
+        {{{ body }}}
+    </main>
+
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
+
 </html>
