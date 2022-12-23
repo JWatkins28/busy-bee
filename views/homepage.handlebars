@@ -1,0 +1,14 @@
+{{#each tasks as |task| }}
+
+<div>
+    <h2><a href="/task/{{task.id}}">{{task.title}}</a></h2>
+    <p>Created by {{task.user.name}} on {{format_date task.date_created}}</p> 
+</div>
+<div>
+    <p> {{task.content}} </p>
+</div>
+
+
+{{else}}
+<h6>There are currently no tasks.</h6>
+{{/each}}
