@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const goalRoutes = require('./goalRoutes');
+const taskRoutes = require('./goalRoutes');
+const subtaskRoutes = require('./subtaskRoutes')
 
 router.use('/users', userRoutes);
-router.use('/goals', goalRoutes);
+router.use('/tasks', taskRoutes);
+router.use('/subtasks', subtaskRoutes);
 
 module.exports = router;
