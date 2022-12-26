@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
 
         // WHAT DO WE WANT HERE? 
 
-        res.render('homepage')
+        res.render('homepage', { logged_in: req.session.logged_in })
 
     } catch (err) { res.status(500).json(err) }
 });
@@ -65,7 +65,7 @@ router.get('/mytasks', checkAuth, async (req, res) => {
 
         const user = userData.get({ plain: true });
 
-        res.render('dashboard', {
+        res.render('mytasks', {
             ...user,
             logged_in: true
         });
