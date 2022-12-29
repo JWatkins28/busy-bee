@@ -1,17 +1,17 @@
-<div class="login">
+<div class="login container container-sm text-center">
     <h2>Login:</h2>
     <form class="login-form">
-        <div>
-            <label for="username-login">Username:</label>
-            <input type="text" id="username-login" />
+        <div class="mb-3">
+            <label for="username-login" class="form-label">Username:</label>
+            <input type="text" class="form-control" id="username-login" placeholder="username">
+        </div>
+        <div class="mb-3">
+            <label for="password-login" class="form-label">Password:</label>
+            <input type="text" class="form-control" id="password-login" placeholder="password">
         </div>
         <div>
-            <label for="password-login">Password:</label>
-            <input type="password" id="password-login" />
-        </div>
-        <div>
-            <button type="submit" id="login-btn" class="button">Login</button>
-            <a href="/signup" class="button">Signup</a>
+            <button type="button" class="btn btn-warning" id="login-btn">Login</button>
+            <button type="button" class="btn btn-warning" onclick="window.location.href='/signup';">Sign Up</button>
         </div>
     </form>
 </div>
