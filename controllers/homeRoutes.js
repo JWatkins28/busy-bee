@@ -76,7 +76,7 @@ router.get('/mytasks', checkAuth, async (req, res) => {
 router.get('/add', checkAuth, async (req, res) => {
     try {
 
-        res.render('addpost', { logged_in: req.session.logged_in });
+        res.render('addtask', { logged_in: req.session.logged_in });
 
     } catch (err) { res.status(500).json(err) }
 });

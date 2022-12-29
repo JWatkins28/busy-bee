@@ -1,14 +1,25 @@
-{{#each tasks as |task| }}
-
-<div>
-    <h2><a href="/task/{{task.id}}">{{task.title}}</a></h2>
-    <p>Created by {{task.user.name}} on {{format_date task.date_created}}</p> 
-</div>
-<div>
-    <p> {{task.content}} </p>
+<div class="container container-sm">
+    <h2 class="text-center">My Tasks</h2>
+    <button type="button" class="btn btn-warning" onclick="window.location.href='/add';">New Task</button>
 </div>
 
+<div class="tasks container">
+    <ol class="list-group">
 
-{{else}}
-<h6>There are currently no tasks.</h6>
-{{/each}}
+        {{#each tasks as |task| }}
+        <a href="/task/{{task.id}}" class="list-group-item list-group-item-action" aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{task.title}}</h5>
+                {{!-- <small>3 days ago</small> --}}
+            </div>
+            <p class="mb-1">{{task.content}}</p>
+            <small>Created on {{format_date task.date_created}}</small>
+        </a>
+
+        {{else}}
+        <h6>There are currently no tasks.</h6>
+            
+        {{/each}}
+        </li>
+    </ol>
+</div>
