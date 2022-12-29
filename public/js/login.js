@@ -12,13 +12,12 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
+        console.log('logged in', response);
         document.location.replace('/mytasks');
       } else {
         alert(response.statusText);
       }
     }
   };
-  
-  
   
 document.querySelector('#login-btn').addEventListener('click', loginFormHandler);

@@ -35,7 +35,7 @@
                                 {{!-- future game link below --}}
                                 <li><a class="dropdown-item" href="#">The Hive</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" id="logout-btn" href="">Logout</a></li>
+                                <li><button class="dropdown-item" id="logout-btn">Logout</button></li>
                             </ul>
                         </div>
                         {{else}}
@@ -64,7 +64,7 @@
         {{{ body }}}
     </main>
 
-    {{#if loggedIn}}
+    {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
 
