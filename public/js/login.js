@@ -12,10 +12,10 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        console.log('logged in', response);
         document.location.replace('/mytasks');
       } else {
-        alert(response.statusText);
+        document.getElementById("bad-login").style.opacity = "1";
+        document.getElementById("bad-login").innerHTML = "Invalid login, please check your username and password and try again.";
       }
     }
   };

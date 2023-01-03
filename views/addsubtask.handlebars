@@ -1,0 +1,28 @@
+<div class="container container-sm mx-auto">
+    <div class="task card" style="width: 18rem;">
+        <div class="task card-body">
+            <h2 class="task card-title">{{title}}</h2>
+            <p class="task card-text">{{content}}</p>
+            <h6 class="task card-subtitle mb-2 text-muted">Created on {{format_date date_created}}</h6>
+        </div>
+    </div>
+</div>
+
+<div class="login container container-sm">
+    <h2>New Subtask</h2>
+    <form class="add-form">
+        <div class="mb-3">
+            <label for="subtask-title" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="subtask-title" placeholder="task">
+        </div>
+        <div class="mb-3">
+            <label for="subtask-description" class="form-label">Description:</label>
+            <textarea type="text" class="form-control" id="subtask-description" placeholder="description"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-warning" id="add-task" data-id="{{id}}">Add</button>
+        </div>
+    </form>
+</div>
+
+<script src="/js/addsubtask.js"></script>

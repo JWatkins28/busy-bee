@@ -96,9 +96,26 @@ router.get('/task/:id/edit', checkAuth, async (req, res) => {
     } catch (err) { res.status(500).json(err) }
 });
 
+// ADD SUBTASK RENDER
+router.get('/task/:id/add', checkAuth, async (req, res) => {
+    try {
+        const taskData = await Task.findByPk(req.params.id);
+
+        const task = taskData.get({ plain: true });
+
+        res.render('addsubtask', {
+            ...task,
+            logged_in: req.session.logged_in,
+        })
+
+    } catch (err) { res.status(500).json(err) }
+});
+
 // PROFILE PAGE RENDER
 router.get('/profile', (req, res) => {
-    try {} catch (err) { res.status(500).json(err) }
+    try {
+
+    } catch (err) { res.status(500).json(err) }
 });
 
 // LOGIN RENDER/REDIRECT
