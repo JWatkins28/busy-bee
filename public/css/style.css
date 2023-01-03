@@ -4,6 +4,40 @@ body {
     background-color: #ffdc73 !important;
 }
 
+textarea {
+    height: fit-content;
+    width: fit-content;
+    resize: none;
+}
+
 .container {
     margin-top: 50px;
+}
+
+.footer-changes {
+    padding-bottom: 0 !important;
+}
+
+.bottom-btns {
+    padding: 0;
+    margin-right: 0px;
+    margin-left: 0px;
+    max-width: 1080px;
+}
+
+.bottom-btns-size{ 
+    height: 100px;
+    border-radius: 0 !important;
+}
+
+.our-logo {
+    height: 46px;
+    width: 46px;
+}
+
+#bad-login {
+    color: red;
+    opacity: 0;
+    user-select: none;
+    font-weight: bold;
 }

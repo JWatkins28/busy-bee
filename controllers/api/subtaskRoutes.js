@@ -5,7 +5,7 @@ const checkAuth = require('../../utils/auth');
 // CREATE SUBTASK
 router.post('/', checkAuth, async (req, res) => {
     try {
-        const newSubtask = await Subtask.create({...req.body, task_id: req.params.id });
+        const newSubtask = await Subtask.create({...req.body});
         res.status(200).json(newSubtask);
     } catch (err) { res.status(400).json(err) }
 });
