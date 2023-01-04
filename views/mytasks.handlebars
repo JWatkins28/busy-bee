@@ -10,7 +10,7 @@
         <a href="/task/{{task.id}}" class="list-group-item list-group-item-action" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{{task.title}}</h5>
-                {{!-- <small>3 days ago</small> --}}
+                <small>Due {{format_date task.date_due}}</small>
             </div>
             <p class="mb-1">{{task.content}}</p>
             <small>Created on {{format_date task.date_created}}</small>
