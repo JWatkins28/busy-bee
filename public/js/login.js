@@ -1,23 +1,26 @@
 const loginFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const name = document.querySelector('#username-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (name && password) {
-      const response = await fetch('/api/users/login', {
-        method: 'POST',
-        body: JSON.stringify({ name, password }),
-        headers: { 'Content-Type': 'application/json' },
+  event.preventDefault();
+
+  const name = document.querySelector("#username-login").value.trim();
+  const password = document.querySelector("#password-login").value.trim();
+
+  if (name && password) {
+    try {
+      const response = await axios.post("/api/users/login", {
+        name,
+        password,
       });
-  
-      if (response.ok) {
-        document.location.replace('/mytasks');
-      } else {
-        document.getElementById("bad-login").style.opacity = "1";
-        document.getElementById("bad-login").innerHTML = "Invalid login, please check your username and password and try again.";
-      }
+    } catch (error) {
+      console.error(error);
+      document.getElementById("bad-login").style.opacity = "1";
+      document.getElementById("bad-login").innerHTML =
+        "Invalid login, please check your username and password and try again.";
+      return;
     }
-  };
-  
-document.querySelector('#login-btn').addEventListener('click', loginFormHandler);
+    document.location.replace("/mytasks");
+  }
+};
+
+document
+  .querySelector("#login-btn")
+  .addEventListener("click", loginFormHandler);
