@@ -49,3 +49,8 @@ textarea {
     border-radius: 50%;
     margin-right: 5px;
 }
+
+.completed-task {
+    background-color: lightgrey;
+    border-color: gold;
+}
