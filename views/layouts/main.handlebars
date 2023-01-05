@@ -31,63 +31,29 @@
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
               {{#if logged_in}}
-                <div class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    id="dropdownMenuLink"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Menu
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    {{! <li><a class="dropdown-item" href="/profile">Profile</a></li> }}
-                    <li><a class="dropdown-item" href="/mytasks">My Tasks</a></li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    {{! future game link below }}
-                    <li><a class="dropdown-item" href="/profile">My Profile</a></li>
-                    <li>
-                      <hr class="dropdown-divider" />
-                    </li>
-                    <li><button
-                        class="dropdown-item"
-                        id="logout-btn"
-                      >Logout</button></li>
-                  </ul>
-                </div>
+                <a class="nav-link" href="/mytasks">My Tasks</a>
+                <a class="nav-link" href="/profile">My Profile</a>
+
+                <a class="nav-link" class="split" id="logout-btn">Logout</a>
+
               {{else}}
-                <li class="nav-item">
-                  <a class="nav-link" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/signup">Sign Up</a>
-                </li>
+
+                <a class="nav-link" class="split" href="/login">Login</a>
+
               {{/if}}
-              {{! <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li> }}
-            </ul>
-            {{! <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> }}
+
+            </div>
           </div>
         </div>
       </nav>

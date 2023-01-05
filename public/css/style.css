@@ -69,3 +69,7 @@ textarea {
 .fa-pencil-alt {
   transform: scale(2);
 }
+
+#logout-btn {
+  cursor: pointer;
+}
