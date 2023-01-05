@@ -1,12 +1,10 @@
 // LOGOUT FUNCTION
 const logout = async (event) => {
     console.log('logout button clicked', event);
-    const response = await fetch('/api/users/logout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-    });
+    const response = await axios.post('/api/users/logout');
+    console.log(response);
 
-    if (response.ok) {
+    if (response.status == 204) {
         document.location.replace('/');
     } else {
         return;
