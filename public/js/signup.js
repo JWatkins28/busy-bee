@@ -13,20 +13,14 @@ const signupFormHandler = async (event) => {
     }
 
     if (name && email && password) {
-      try {
-        const response = await axios.post("/api/users", {
-          name,
-          email,
-          password,
-        });
-      } catch (error) {
-        console.error(error);
+      const response = await axios.post('/api/users', {name, email, password });
+
+      if (response.status == 200) {
+        document.location.replace('/mytasks');
+      } else {
         document.getElementById("bad-login").style.opacity = "1";
-        document.getElementById("bad-login").innerHTML =
-          "Error signing up, please try again.";
-        return;
+        document.getElementById("bad-login").innerHTML = "Your password must be at least 8 characters long, please try again.";
       }
-      document.location.replace("/mytasks");
     }
   };
 
