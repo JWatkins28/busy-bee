@@ -21,35 +21,25 @@
   <body>
     <header>
       {{! placeholder for logo/title img }}
-      <nav class="navbar navbar-expand-lg bg-warning">
+      <nav class="navbar bg-warning">
         <div class="container-fluid">
           <a class="navbar-brand" href="/"><img
               src="/images/cute-bee.png"
               class="our-logo"
             />Busy Bee</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-              {{#if logged_in}}
-                <a class="nav-link" href="/mytasks">My Tasks</a>
-                <a class="nav-link" href="/profile">My Profile</a>
+          <div class="d-flex flex-row justify-content-between" id="navbarNavAltMarkup">
+            <div class="navbar-nav flex-row" style="width: 100%;">
 
-                <a class="nav-link" class="split" id="logout-btn">Logout</a>
+              <a class="nav-link active m-2" aria-current="page" href="/">Home</a>
+              {{#if logged_in}}
+                <a class="nav-link active m-2" href="/mytasks">My Tasks</a>
+                <a class="nav-link active m-2" href="/profile">My Profile</a>
+
+                <a class="nav-link active m-2" id="logout-btn">Logout</a>
 
               {{else}}
 
-                <a class="nav-link" class="split" href="/login">Login</a>
+                <a class="nav-link active m-2" href="/login">Login</a>
 
               {{/if}}
 
@@ -77,22 +67,22 @@
           >
             <button
               type="button"
-              class="btn btn-outline-warning bg-light bottom-btns-size"
+              class="btn btn-outline-warning bottom-btns-size"
               id="home-btm-btn"
               onclick="window.location.href='/'"
-            >Home</button>
+            >Home<br />🏚️</button>
             <button
               type="button"
-              class="btn btn-outline-warning bg-light bottom-btns-size"
+              class="btn btn-outline-warning bottom-btns-size"
               id="tasks-btm-btn"
               onclick="window.location.href='/mytasks'"
-            >My Tasks</button>
+            >My Tasks<br />🍯</button>
             <button
               type="button"
-              class="btn btn-outline-warning bg-light bottom-btns-size"
+              class="btn btn-outline-warning bottom-btns-size"
               id="profile-btm-btn"
               onclick="window.location.href='/profile'"
-            >Profile</button>
+            >Profile<br />🧑</button>
           </div>
         </div>
       {{else}}
