@@ -41,3 +41,11 @@ textarea {
     user-select: none;
     font-weight: bold;
 }
+
+#profile-icon {
+    background-color: white;
+    border: 1px solid gold;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+}

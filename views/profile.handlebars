@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-center w100 h100">
+<div class="d-flex justify-content-center" style="min-height: 500px; padding: 10% 0 20% 0; max-width: 670px;min-width: 550px; margin: 0 10% 0 10%;">
+  <div class="card" style="width: 75%; height: 100%;">
+    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+      <h5 class="card-title align-self-start"><img src="/images/cute-bee.png" id="profile-icon">{{name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted align-self-start">{{email}}</h6>
+      <p class="card-text align-self-start">Account Created On: {{format_date date_created}}</p>
+      <ul>
+        <li class="card-text">Current Tasks: {{tasks.length}}</li>
+        <li class="card-text">Tasks Completed: {{completed_tasks}}</li>
+        <li class="card-text">Honey Earned: 🍯<span id="honey">{{honey}}</span> </li>
+      </ul>
+
+      <p class="card-text" style="font-weight: bold;">- Badges Earned -</p>
+      <div style="height: 50px;margin-bottom: 10px;" id="badge-container">
+        {{!-- {{#each honeyScore as |h| }}
+        {{h}}
+        {{/each}} --}}
+      </div>
+      <button type="button" class="btn btn-warning" onclick="window.location.href='/mytasks'">View Your Tasks</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="/js/profile.js"></script>
+{{!-- badge art from https://clipartmag.com/bee-clipart --}}
