@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { json } = require('sequelize');
 const { User, Task, Subtask } = require('../models');
 const checkAuth = require('../utils/auth');
 
@@ -112,9 +113,23 @@ router.get('/task/:id/add', checkAuth, async (req, res) => {
 });
 
 // PROFILE PAGE RENDER
-router.get('/profile', (req, res) => {
+router.get('/profile', checkAuth, async (req, res) => {
     try {
 
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Task }]
+        });
+
+        const user = userData.get({ plain: true });
+
+        
+
+
+        res.render('profile', {
+            ...user,
+            logged_in: req.session.logged_in,
+        })
     } catch (err) { res.status(500).json(err) }
 });
 
