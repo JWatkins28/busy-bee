@@ -10,13 +10,9 @@ const addSubTaskHandler = async (event) => {
 
             const task_id = event.target.getAttribute('data-id');
 
-            const response = await fetch('/api/subtasks', {
-                method: 'POST',
-                body: JSON.stringify({ title, content, task_id }),
-                headers: { 'Content-Type': 'application/json' },
-            });
+            const response = await axios.post('/api/subtasks', { title, content, task_id });
 
-            if (response.ok) {
+            if (response.status == 200) {
                 document.location.replace(`/task/${task_id}`);
             } else {
                 alert(response.statusText);

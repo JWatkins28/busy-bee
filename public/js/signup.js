@@ -13,13 +13,9 @@ const signupFormHandler = async (event) => {
     }
 
     if (name && email && password) {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ name, email, password }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-  
-      if (response.ok) {
+      const response = await axios.post('/api/users', {name, email, password });
+
+      if (response.status == 200) {
         document.location.replace('/mytasks');
       } else {
         document.getElementById("bad-login").style.opacity = "1";

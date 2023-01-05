@@ -5,18 +5,13 @@ const addTaskHandler = async (event) => {
     const content = document.querySelector('#task-description').value.trim();
 
     if (title && content) {
-        const response = await fetch('/api/tasks', {
-            method: 'POST',
-            body: JSON.stringify({ title, content }),
-            headers: { 'Content-Type': 'application/json' },
-        });
+        const response = await axios.post('/api/tasks', {title, content });
+        console.log(response);
 
-        if (response.ok) {
+        if (response.status == 200) {
             document.location.replace('/mytasks');
-        } else {
-            alert(response.statusText);
-        }
-    }
-}
+        } else { alert(response.statusText)};
+    };
+};
 
 document.querySelector('.add-form').addEventListener('submit', addTaskHandler);
