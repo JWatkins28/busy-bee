@@ -31,6 +31,11 @@ Subtask.init(
         key: 'id',
       },
     },
+    completed: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    }
   },
   {
     sequelize,

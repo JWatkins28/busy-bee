@@ -17,4 +17,3 @@ const addTaskHandler = async (event) => {
     };
 
 document.querySelector('.add-form').addEventListener('submit', addTaskHandler);
-

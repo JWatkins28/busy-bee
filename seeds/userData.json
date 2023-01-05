@@ -2,6 +2,8 @@
     {
         "name": "busybee",
         "email": "bee@buzz.com",
-        "password": "password123"
+        "password": "password123",
+        "completed_tasks": 5,
+        "honey": 50
     }
 ]
