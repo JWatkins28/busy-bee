@@ -7,7 +7,11 @@
     <ol class="list-group">
 
         {{#each tasks as |task| }}
-        <a href="/task/{{task.id}}" class="list-group-item list-group-item-action" aria-current="true">
+        <a href="/task/{{task.id}}" class="list-group-item list-group-item-action 
+            {{#if task.completed}}
+            completed-task
+            {{/if}}
+        " aria-current="true">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{{task.title}}</h5>
                 <small>Due {{format_date task.date_due}}</small>
