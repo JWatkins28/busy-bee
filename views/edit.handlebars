@@ -1,14 +1,13 @@
 <div class="login container container-sm">
-  <h2>New Task</h2>
+  <h2>Edit Task</h2>
   <form class="add-form">
     <div class="mb-3">
       <label for="task-title" class="form-label">Task:</label>
-      <input
+      <textarea
         type="text"
         class="form-control"
         id="task-title"
-        placeholder="task"
-      />
+      >{{title}}</textarea>
     </div>
     <div class="mb-3">
       <label for="task-description" class="form-label">Description:</label>
@@ -16,17 +15,22 @@
         type="text"
         class="form-control"
         id="task-description"
-        placeholder="description"
-      ></textarea>
+      >{{content}}</textarea>
     </div>
     <div class="mb-3">
-      <label for="date">Due Date:</label>
+      <label>Due Date: {{format_date date_due}}</label><br />
+      <label for="date">Change to:</label>
       <input type="date" />
     </div>
     <div>
-      <button type="submit" class="btn btn-warning" id="add-task">Add</button>
+      <button
+        type="submit"
+        class="btn btn-warning"
+        id="update-task"
+        data-id="{{id}}"
+      >Update</button>
     </div>
   </form>
 </div>
 
-<script src="/js/addtask.js"></script>
+<script src="/js/edit.js"></script>

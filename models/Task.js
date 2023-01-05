@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-const helpers = require('../utils/helpers');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
+const helpers = require("../utils/helpers");
 
 class Task extends Model {}
 
@@ -33,22 +33,22 @@ Task.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
     },
     completed: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
-    }
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'task',
+    modelName: "task",
   }
 );
 

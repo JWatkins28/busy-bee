@@ -1,112 +1,141 @@
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <title>Busy Bee</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Busy Bee</title>
+  </head>
 
-<body>
-  <header>
-    {{! placeholder for logo/title img }}
-    <nav class="navbar navbar-expand-lg bg-warning">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="/images/cute-bee.png" class="our-logo" />Busy Bee</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+  <body>
+    <header>
+      {{! placeholder for logo/title img }}
+      <nav class="navbar navbar-expand-lg bg-warning">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><img
+              src="/images/cute-bee.png"
+              class="our-logo"
+            />Busy Bee</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            {{#if logged_in}}
-            <div class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Menu
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                {{! <li><a class="dropdown-item" href="/profile">Profile</a></li> }}
-                <li><a class="dropdown-item" href="/mytasks">My Tasks</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                {{! future game link below }}
-                <li><a class="dropdown-item" href="/profile">My Profile</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><button class="dropdown-item" id="logout-btn">Logout</button></li>
-              </ul>
+              {{#if logged_in}}
+                <a class="nav-link" href="/mytasks">My Tasks</a>
+                <a class="nav-link" href="/profile">My Profile</a>
+
+                <a class="nav-link" class="split" id="logout-btn">Logout</a>
+
+              {{else}}
+
+                <a class="nav-link" class="split" href="/login">Login</a>
+
+              {{/if}}
+
             </div>
-            {{else}}
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/signup">Sign Up</a>
-            </li>
-            {{/if}}
-            {{! <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li> }}
-          </ul>
-          {{! <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> }}
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <main>
-    {{! other handlebars }}
-    {{{body}}}
-  </main>
+    <main>
+      {{! other handlebars }}
+      {{{body}}}
+    </main>
 
-  <footer class="footer mt-auto py-3 fixed-bottom footer-changes">
+    <footer class="footer mt-auto py-3 fixed-bottom footer-changes">
+      {{#if logged_in}}
+        <div
+          class="container d-flex flex-row justify-content-center flex-fill bottom-btns d-lg-none"
+        >
+          <div
+            class="btn-group btn-group-lg flex-fill"
+            style="height: 100px"
+            role="group"
+            aria-label="Basic outlined example"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-warning bg-light bottom-btns-size"
+              id="home-btm-btn"
+              onclick="window.location.href='/'"
+            >Home</button>
+            <button
+              type="button"
+              class="btn btn-outline-warning bg-light bottom-btns-size"
+              id="tasks-btm-btn"
+              onclick="window.location.href='/mytasks'"
+            >My Tasks</button>
+            <button
+              type="button"
+              class="btn btn-outline-warning bg-light bottom-btns-size"
+              id="profile-btm-btn"
+              onclick="window.location.href='/profile'"
+            >Profile</button>
+          </div>
+        </div>
+      {{else}}
+        <div
+          class="container d-flex flex-row justify-content-center flex-fill bottom-btns d-lg-none"
+        >
+          <div
+            class="btn-group btn-group-lg flex-fill"
+            style="height: 100px"
+            role="group"
+            aria-label="Basic outlined example"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-warning bg-light bottom-btns-size"
+              id="login-btm-btn"
+              onclick="window.location.href='/login'"
+            >Login</button>
+            <button
+              type="button"
+              class="btn btn-outline-warning bg-light bottom-btns-size"
+              id="signup-btm-btn"
+              onclick="window.location.href='/signup'"
+            >Signup</button>
+          </div>
+        </div>
+      {{/if}}
+    </footer>
+
     {{#if logged_in}}
-    <div class="container d-flex flex-row justify-content-center flex-fill bottom-btns d-lg-none">
-      <div class="btn-group btn-group-lg flex-fill" style="height: 100px" role="group"
-        aria-label="Basic outlined example">
-        <button type="button" class="btn btn-outline-warning bg-light bottom-btns-size" id="home-btm-btn"
-          onclick="window.location.href='/'">Home</button>
-        <button type="button" class="btn btn-outline-warning bg-light bottom-btns-size" id="tasks-btm-btn"
-          onclick="window.location.href='/mytasks'">My Tasks</button>
-        <button type="button" class="btn btn-outline-warning bg-light bottom-btns-size" id="profile-btm-btn"
-          onclick="window.location.href='/profile'">Profile</button>
-      </div>
-    </div>
-    {{else}}
-    <div class="container d-flex flex-row justify-content-center flex-fill bottom-btns d-lg-none">
-      <div class="btn-group btn-group-lg flex-fill" style="height: 100px" role="group"
-        aria-label="Basic outlined example">
-        <button type="button" class="btn btn-outline-warning bg-light bottom-btns-size" id="login-btm-btn"
-          onclick="window.location.href='/login'">Login</button>
-        <button type="button" class="btn btn-outline-warning bg-light bottom-btns-size" id="signup-btm-btn"
-          onclick="window.location.href='/signup'">Signup</button>
-      </div>
-    </div>
+      <script src="/js/logout.js"></script>
     {{/if}}
-  </footer>
 
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <script src="/js/main.js"></script>
-  {{! import axios }}
-  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/main.js"></script>
+    {{! import axios }}
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"
+    ></script>
+  </body>
 
 </html>
