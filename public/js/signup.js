@@ -17,7 +17,7 @@ const signupFormHandler = async (event) => {
 
   if (name && email && password) {
     const response = await axios.post("/api/users", { name, email, password });
-    console.log(response);
+
     if (response.status == 200) {
       document.location.replace("/mytasks");
     } else {
@@ -27,21 +27,6 @@ const signupFormHandler = async (event) => {
     }
   }
 };
-
-// if (name && email && password) {
-//   const response = await fetch('/api/users', {
-//     method: 'POST',
-//     body: JSON.stringify({ name, email, password }),
-//     headers: { 'Content-Type': 'application/json' }
-//   });
-
-//   if (response.ok) {
-//     document.location.replace('/mytasks');
-//   } else {
-
-//   }
-// }
-// };
 
 document
   .querySelector("#signup-btn")

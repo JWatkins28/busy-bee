@@ -7,16 +7,15 @@ const addTaskHandler = async (event) => {
   const date = dateField.value.trim();
   const date_due = new Date(date.replace(/-/g, "/"));
 
-  console.log(date);
-
   if (title && content && date_due) {
-    const response = await fetch("/api/tasks", {
-      method: "POST",
-      body: JSON.stringify({ title, content, date_due }),
-      headers: { "Content-Type": "application/json" },
+    const response = await axios.post("/api/tasks", {
+      title,
+      content,
+      date_due,
     });
+    console.log(response);
 
-    if (response.ok) {
+    if (response.status == 200) {
       document.location.replace("/mytasks");
     } else {
       alert(response.statusText);
