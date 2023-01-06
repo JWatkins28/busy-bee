@@ -1,0 +1,29 @@
+<div class="container container-sm">
+    <h2 class="text-center">My Tasks</h2>
+    <button type="button" class="btn btn-warning" onclick="window.location.href='/add';">New Task</button>
+</div>
+
+<div class="tasks container">
+    <ol class="list-group">
+
+        {{#each tasks as |task| }}
+        <a href="/task/{{task.id}}" class="list-group-item list-group-item-action 
+            {{#if task.completed}}
+            completed-task
+            {{/if}}
+        " aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{task.title}}</h5>
+                <small>Due {{format_date task.date_due}}</small>
+            </div>
+            <p class="mb-1">{{task.content}}</p>
+            <small>Created on {{format_date task.date_created}}</small>
+        </a>
+
+        {{else}}
+        <h6>There are currently no tasks.</h6>
+            
+        {{/each}}
+        </li>
+    </ol>
+</div>

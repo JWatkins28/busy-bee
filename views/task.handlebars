@@ -1,0 +1,107 @@
+<div class="container container-sm mx-auto">
+  <div class="task card w100">
+    <div class="task card-body">
+      <a href="/edit/{{id}}" class="button" id="edit-btn" data-id="{{id}}"><i
+          class="fas fa-pencil-alt"
+        ></i></a>
+      <h2 class="task card-title">{{title}}</h2>
+      <small>Due {{format_date date_due}}</small>
+      <p class="task card-text">{{content}}</p>
+      <h6 class="task card-subtitle mb-2 text-muted">Created on
+        {{format_date date_created}}</h6>
+      {{#if completed}}
+        <button
+          type="button"
+          class="btn btn-secondary"
+          id="task-btn"
+          data-id="{{id}}"
+          data-user="{{user_id}}"
+          data-status="{{completed}}"
+        >Completed ✔</button>
+      {{else}}
+        <button
+          type="button"
+          class="btn btn-warning"
+          id="task-btn"
+          data-id="{{id}}"
+          data-user="{{user_id}}"
+          data-status="{{completed}}"
+        >Complete Task</button>
+      {{/if}}
+      <button
+        type="button"
+        class="btn btn-danger delete-btn"
+        data-id="{{id}}"
+        data-user="{{user_id}}"
+        data-type="tasks"
+      >Delete</button>
+    </div>
+  </div>
+</div>
+
+<div class="container container-sm">
+  <button
+    type="button"
+    class="btn btn-warning"
+    onclick="window.location.href='/task/{{id}}/add';"
+  >Add Subtask</button>
+</div>
+
+<div class="container d-flex flex-row flex-wrap" style="margin-bottom: 120px;">
+  {{#if subtasks.length}}
+    {{#each subtasks as |subtask|}}
+      <div class="m-2">
+        <div
+          class="task card w100 h100"
+          style="width: 18rem; min-height: 100%;"
+        >
+          <div class="task card-body">
+            <a
+              href="/subtask/edit/{{id}}"
+              class="button"
+              id="edit-btn"
+              data-id="{{id}}"
+            ><i class="fas fa-pencil-alt" style="transform-scale"></i></a>
+            <h3
+              class="task card-title"
+              style="min-height:120px;"
+            >{{subtask.title}}</h3>
+            <p class="task card-text">{{subtask.content}}</p>
+            <h6 class="task card-subtitle mb-2 text-muted">Created on
+              {{format_date subtask.date_created}}</h6>
+            <div
+              class="justify-content-end align-items-end"
+              style="position: relative;top:10px;"
+            >
+              {{#if subtask.completed}}
+                <button
+                  type="button"
+                  class="btn btn-secondary subtask-btns"
+                  data-id="{{subtask.id}}"
+                  data-status="{{subtask.completed}}"
+                >Completed ✔</button>
+              {{else}}
+                <button
+                  type="button"
+                  class="btn btn-warning subtask-btns"
+                  data-id="{{subtask.id}}"
+                  data-status="{{subtask.completed}}"
+                >Complete Subtask</button>
+              {{/if}}
+              <button
+                type="button"
+                class="btn btn-danger delete-btn"
+                data-id="{{id}}"
+                data-user="{{user_id}}"
+                data-type="subtasks"
+                style="margin-left: 20px;"
+              >Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  {{/if}}
+</div>
+
+<script src="/js/task.js"></script>

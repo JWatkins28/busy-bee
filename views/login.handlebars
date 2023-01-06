@@ -1,0 +1,24 @@
+<div class="login container container-sm text-center">
+    <h2>Login:</h2>
+    <form class="login-form">
+        <div class="mb-3">
+            <label for="username-login" class="form-label">Username:</label>
+            <input type="text" class="form-control" id="username-login" placeholder="username">
+        </div>
+        <div class="mb-3">
+            <label for="password-login" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password-login" placeholder="password">
+        </div>
+        <div>
+            <p id="bad-login">placeholder</p>
+            <button type="button" class="btn btn-warning btn-md" id="login-btn">Login</button>
+        </div>
+        <div class="mt-5">
+            <h5 class="mb-3">Need an Account?</h5>
+            <button type="button" class="btn btn-warning" onclick="window.location.href='/signup';">Sign Up</button>
+        </div>
+    </form>
+</div>
+
+<!-- javascript file-->
+<script src="/js/login.js"></script>

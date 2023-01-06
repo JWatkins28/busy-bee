@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS busybee_db;
+
+CREATE DATABASE busybee_db;

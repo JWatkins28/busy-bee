@@ -1,0 +1,91 @@
+/* background color for yellow is bg-warning */
+
+body {
+  background-color: #ffdc73 !important;
+}
+
+textarea {
+  height: fit-content;
+  width: fit-content;
+  resize: none;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.footer-changes {
+  padding-bottom: 0 !important;
+}
+
+.bottom-btns {
+  padding: 0;
+  margin-right: 0px;
+  margin-left: 0px;
+  max-width: 1080px;
+}
+
+.bottom-btns-size {
+  height: 100px;
+  border-radius: 0 !important;
+}
+
+.our-logo {
+  height: 46px;
+  width: 46px;
+}
+
+#bad-login {
+  color: red;
+  opacity: 0;
+  user-select: none;
+  font-weight: bold;
+}
+
+#profile-icon {
+  background-color: white;
+  border: 1px solid gold;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.completed-task {
+  background-color: lightgrey;
+  border-color: gold;
+}
+
+#edit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  margin: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#editsubtask-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  margin: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.fa-pencil-alt {
+  transform: scale(2);
+}
+
+#logout-btn {
+  cursor: pointer;
+}
+
+.navbar-brand {
+  font-family: Patrick Hand SC, Helvetica, sans-serif;
+  font-size: 25px;
+}

@@ -1,0 +1,33 @@
+<div class="login container container-sm">
+  <h2>Edit Subtask</h2>
+  <form class="add-form">
+    <div class="mb-3">
+      <label for="subtask-title" class="form-label">Subtask:</label>
+      <textarea
+        type="text"
+        class="form-control"
+        id="subtask-title"
+      >{{title}}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="subtask-description" class="form-label">Description:</label>
+      <textarea
+        type="text"
+        class="form-control"
+        id="subtask-description"
+      >{{content}}</textarea>
+    </div>
+    <div>
+      <p id="bad-login">placeholder</p>
+      <button
+        type="submit"
+        class="btn btn-warning"
+        id="update-subtask"
+        data-id="{{id}}"
+        data-task="{{task_id}}"
+      >Update</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/editsubtask.js"></script>

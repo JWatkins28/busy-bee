@@ -1,0 +1,21 @@
+[
+    {
+        "title": "Monday",
+        "content": "Upper Body",
+        "date_created": "01/06/2023",
+        "task_id": 1,
+        "completed": true
+    },
+    {
+        "title": "Wednesday",
+        "content": "Lower body",
+        "date_created": "01/06/2023",
+        "task_id": 1
+    },
+    {
+        "title": "Friday",
+        "content": "Full Body",
+        "date_created": "01/06/2023",
+        "task_id": 1
+    }
+]

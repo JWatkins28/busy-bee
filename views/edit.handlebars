@@ -1,0 +1,37 @@
+<div class="login container container-sm">
+  <h2>Edit Task</h2>
+  <form class="add-form">
+    <div class="mb-3">
+      <label for="task-title" class="form-label">Task:</label>
+      <textarea
+        type="text"
+        class="form-control"
+        id="task-title"
+      >{{title}}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="task-description" class="form-label">Description:</label>
+      <textarea
+        type="text"
+        class="form-control"
+        id="task-description"
+      >{{content}}</textarea>
+    </div>
+    <div class="mb-3">
+      <label>Due Date: {{format_date date_due}}</label><br />
+      <label for="date">Change to:</label>
+      <input type="date" />
+    </div>
+    <div>
+      <p id="bad-login">placeholder</p>
+      <button
+        type="submit"
+        class="btn btn-warning"
+        id="update-task"
+        data-id="{{id}}"
+      >Update</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/edit.js"></script>
