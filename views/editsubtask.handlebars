@@ -1,37 +1,32 @@
 <div class="login container container-sm">
-  <h2>Edit Task</h2>
+  <h2>Edit Subtask</h2>
   <form class="add-form">
     <div class="mb-3">
-      <label for="task-title" class="form-label">Task:</label>
+      <label for="subtask-title" class="form-label">Subtask:</label>
       <textarea
         type="text"
         class="form-control"
-        id="task-title"
+        id="subtask-title"
       >{{title}}</textarea>
     </div>
     <div class="mb-3">
-      <label for="task-description" class="form-label">Description:</label>
+      <label for="subtask-description" class="form-label">Description:</label>
       <textarea
         type="text"
         class="form-control"
-        id="task-description"
+        id="subtask-description"
       >{{content}}</textarea>
-    </div>
-    <div class="mb-3">
-      <label>Due Date: {{format_date date_due}}</label><br />
-      <label for="date">Change to:</label>
-      <input type="date" />
     </div>
     <div>
       <p id="bad-login">placeholder</p>
       <button
         type="submit"
         class="btn btn-warning"
-        id="update-task"
+        id="update-subtask"
         data-id="{{id}}"
       >Update</button>
     </div>
   </form>
 </div>
 
-<script src="/js/edit.js"></script>
+<script src="/js/editsubtask.js"></script>

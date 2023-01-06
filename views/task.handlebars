@@ -56,10 +56,16 @@
           style="width: 18rem; min-height: 100%;"
         >
           <div class="task card-body">
-            <h2
+            <a
+              href="/subtask/edit/{{id}}"
+              class="button"
+              id="edit-btn"
+              data-id="{{id}}"
+            ><i class="fas fa-pencil-alt"></i></a>
+            <h3
               class="task card-title"
               style="min-height:120px;"
-            >{{subtask.title}}</h2>
+            >{{subtask.title}}</h3>
             <p class="task card-text">{{subtask.content}}</p>
             <h6 class="task card-subtitle mb-2 text-muted">Created on
               {{format_date subtask.date_created}}</h6>

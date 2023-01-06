@@ -119,6 +119,22 @@ router.get("/task/:id/add", checkAuth, async (req, res) => {
   }
 });
 
+// EDIT SUBTASK RENDER
+router.get("/subtask/edit/:id", checkAuth, async (req, res) => {
+  try {
+    const subtaskData = await Subtask.findByPk(req.params.id);
+
+    const subtask = subtaskData.get({ plain: true });
+
+    res.render("editsubtask", {
+      ...subtask,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // PROFILE PAGE RENDER
 router.get("/profile", checkAuth, async (req, res) => {
   try {

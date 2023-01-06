@@ -66,6 +66,17 @@ textarea {
   cursor: pointer;
 }
 
+#editsubtask-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  margin: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .fa-pencil-alt {
   transform: scale(2);
 }
