@@ -10,20 +10,18 @@ const editTaskHandler = async (event) => {
   if (title && content && date_due) {
     if (event.target.hasAttribute("data-id")) {
       const id = event.target.getAttribute("data-id");
-      const body = JSON.stringify({ title, content, date_due });
-      console.log("updating task with", body);
+      // const body = JSON.stringify({ title, content, date_due });
+      // console.log(body);
+      const response = await axios.put(`/api/tasks/${id}`, {title, content, date_due});
 
-      const response = await fetch(`/api/tasks/${id}`, {
-        method: "PUT",
-        body,
-        headers: { "Content-Type": "application/json" },
-      });
-
-      if (response.ok) {
+      if (response.status == 200) {
         console.log(response);
         document.location.replace("/mytasks");
       } else {
-        alert(response.statusText);
+        document.getElementById("bad-login").style.opacity = "1";
+        document.getElementById("bad-login").innerHTML =
+        "Please fill out all fields and try again.";
+        return;
       }
     }
   }
