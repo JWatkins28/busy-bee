@@ -8,13 +8,14 @@ const editSubtaskHandler = async (event) => {
     if (event.target.hasAttribute("data-id")) {
       try {
         const id = event.target.getAttribute("data-id");
+        const task_id = event.target.getAttribute("data-task")
 
         const response = await axios.put(`/api/subtasks/${id}`, {
           title,
           content,
         });
 
-        document.location.replace(`/task/${id}`);
+        document.location.replace(`/task/${task_id}`);
       } catch (err) {
         document.getElementById("bad-login").style.opacity = "1";
         document.getElementById("bad-login").innerHTML =
