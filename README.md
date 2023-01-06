@@ -22,7 +22,7 @@
   npm i
   ```
   ## Usage
-  You can use this project by accessing it at the deployed link:
+  You can use this project by accessing it at the deployed link: https://lit-beach-45684.herokuapp.com/
   ## License
   [MIT](https://choosealicense.com/licenses/mit/)
   ## Contributing
