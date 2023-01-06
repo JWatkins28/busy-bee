@@ -3,7 +3,7 @@
         "name": "busybee",
         "email": "bee@buzz.com",
         "password": "password123",
-        "completed_tasks": 5,
+        "completed_tasks": 10,
         "honey": 50
     }
 ]
