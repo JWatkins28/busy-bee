@@ -77,10 +77,6 @@ textarea {
   cursor: pointer;
 }
 
-.fa-pencil {
-  transform: scale(1);
-}
-
 .fa-pencil-alt {
   transform: scale(2);
 }
