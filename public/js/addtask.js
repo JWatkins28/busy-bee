@@ -13,7 +13,6 @@ const addTaskHandler = async (event) => {
       content,
       date_due,
     });
-    console.log(response);
 
     if (response.status == 200) {
       document.location.replace("/mytasks");
