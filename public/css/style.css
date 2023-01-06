@@ -73,3 +73,8 @@ textarea {
 #logout-btn {
   cursor: pointer;
 }
+
+.navbar-brand {
+  font-family: Patrick Hand SC, Helvetica, sans-serif;
+  font-size: 25px;
+}
