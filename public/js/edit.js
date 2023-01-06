@@ -9,18 +9,15 @@ const editTaskHandler = async (event) => {
 
   if (title && content && date_due) {
     if (event.target.hasAttribute("data-id")) {
-      const id = event.target.getAttribute("data-id");
-      // const body = JSON.stringify({ title, content, date_due });
-      // console.log(body);
-      const response = await axios.put(`/api/tasks/${id}`, {title, content, date_due});
+      try {
+        const id = event.target.getAttribute("data-id");
 
-      if (response.status == 200) {
-        console.log(response);
+        const response = await axios.put(`/api/tasks/${id}`, {title, content, date_due});
+  
         document.location.replace("/mytasks");
-      } else {
+      } catch (err) {
         document.getElementById("bad-login").style.opacity = "1";
-        document.getElementById("bad-login").innerHTML =
-        "Please fill out all fields and try again.";
+        document.getElementById("bad-login").innerHTML = "Please fill out all fields and try again.";
         return;
       }
     }
