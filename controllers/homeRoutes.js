@@ -5,10 +5,7 @@ const checkAuth = require("../utils/auth");
 
 // HOMEPAGE RENDER
 router.get("/", async (req, res) => {
-  try {
-    // WHAT DO WE WANT HERE?
-
-    res.render("homepage", { logged_in: req.session.logged_in });
+  try { res.render("homepage", { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -32,7 +29,7 @@ router.get("/task/:id", checkAuth, async (req, res) => {
           },
         ],
       });
-      // IF IT DOES HAVE TASKS, GRAB ALL POSTS WITH TASKS WITH ATTACHED TASKS
+      // IF IT DOES HAVE TASKS, GRAB ALL POSTS WITH TASKS WITH ATTACHED SUBTASKS
     } else {
       taskData = await Task.findByPk(req.params.id, {
         include: [
@@ -62,6 +59,7 @@ router.get("/task/:id", checkAuth, async (req, res) => {
 // MY TASKS PAGE RENDER
 router.get("/mytasks", checkAuth, async (req, res) => {
   try {
+    // GRAB LOGGED IN USER'S TASKS
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
       include: [{ model: Task }],

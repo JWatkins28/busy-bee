@@ -1,3 +1,4 @@
+// CHECKS WHAT PAGE WE'RE ON AND COLORS THE MOBILE VIEW BUTTONS BASED ON THAT
 function pageLoad() {
     var page = window.location.pathname.toLowerCase();
     const profile = document.querySelector('#profile-btm-btn')
